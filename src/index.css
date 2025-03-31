@@ -1,0 +1,82 @@
+@import url('https://rsms.me/inter/inter.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background-light text-text-primary antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-background-card rounded-xl shadow-card p-6 
+           border border-border-light transition-all duration-200
+           hover:shadow-card-hover;
+  }
+
+  .metric-card {
+    @apply flex flex-col justify-between h-full bg-background-card 
+           rounded-xl p-6 border border-border-light
+           transition-all duration-200 hover:shadow-card-hover;
+  }
+
+  .activity-item {
+    @apply flex items-center justify-between p-4 rounded-lg
+           transition-colors duration-200 hover:bg-accent-mint
+           border border-transparent;
+  }
+
+  .header-button {
+    @apply p-2 rounded-lg hover:bg-accent-blue transition-colors
+           text-text-secondary hover:text-primary;
+  }
+
+  .side-nav-item {
+    @apply flex items-center space-x-3 px-4 py-3 rounded-lg
+           text-text-secondary hover:text-primary hover:bg-accent-blue
+           transition-all duration-200 cursor-pointer font-medium;
+  }
+
+  .side-nav-item.active {
+    @apply bg-accent-blue text-primary font-semibold;
+  }
+
+  .side-nav-item svg {
+    @apply h-5 w-5;
+  }
+
+  .action-button {
+    @apply flex items-center space-x-2 px-5 py-3 rounded-lg text-white
+           shadow-card transition-all duration-200 font-medium text-sm
+           hover:shadow-lg hover:translate-y-[-1px];
+  }
+
+  .status-pill {
+    @apply px-3 py-1 rounded-full text-xs font-medium;
+  }
+
+  .status-pill.active {
+    @apply bg-teal-light text-teal-dark;
+  }
+
+  .status-pill.pending {
+    @apply bg-purple-light text-purple-dark;
+  }
+
+  .status-pill.warning {
+    @apply bg-coral-light text-coral-dark;
+  }
+
+  .search-input {
+    @apply w-full px-4 py-2 rounded-lg border border-border-light
+           focus:outline-none focus:ring-2 focus:ring-border-focus
+           bg-background-muted placeholder-text-muted text-sm;
+  }
+}
